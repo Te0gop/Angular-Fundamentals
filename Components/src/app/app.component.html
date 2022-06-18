@@ -1,2 +1,16 @@
 <div class="welcome-message">{{welcomeMessage}}</div>
 <app-name-input></app-name-input>
+
+<div *ngIf="isVisible">
+  IS VISIBLE
+</div>
+
+<ul>
+  <li *ngFor="let user of users">
+    <span>{{user.firstName}}</span>
+    <span>{{user.lastName}}</span>
+    <span>{{user.age}}</span>
+  </li>
+</ul>
+
+<button (click)="toggleHandler()">Toggle</button>

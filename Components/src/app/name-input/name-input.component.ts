@@ -11,6 +11,14 @@ export class NameInputComponent {
 
   constructor() { }
 
+  inputKeyupHandler(event: KeyboardEvent) : void {
+    this.inputValue = (event.target as HTMLInputElement).value;
+  }
+
+  btnClickHandler(value: any) : void {
+    console.log('btn was clicked!', value);
+  }
+
 
 
 }
