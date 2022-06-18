@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-name-input',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NameInputComponent {
 
-  inputValue = 'Dummy value'; 
+  @Input() inputValue = 'Default value'; 
+  @Output() btnClick = new EventEmitter();
 
   constructor() { }
 
@@ -15,8 +16,11 @@ export class NameInputComponent {
     this.inputValue = (event.target as HTMLInputElement).value;
   }
 
-  btnClickHandler(value: any) : void {
+  btnClickHandler(value: KeyboardEvent, inputEl: HTMLInputElement) : void {
     console.log('btn was clicked!', value);
+    this.btnClick.emit({ value });
+
+    this.btnClick.emit({ inputEl })
   }
 
 

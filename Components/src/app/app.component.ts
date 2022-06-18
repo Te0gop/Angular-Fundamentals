@@ -28,7 +28,13 @@ export class AppComponent {
 
   isVisible = false;
 
+  nameInput = 'Test test';
+
   users = users;
+
+  nameInputBtnHandler(data: {inputEl: HTMLInputElement}) : void {
+    console.log(data.inputEl.value);
+  }
 
   constructor() {
 
