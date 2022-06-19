@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 const users = [
   {
@@ -36,8 +36,8 @@ export class AppComponent {
     console.log(data.inputEl.value);
   }
 
-  constructor() {
-
+  constructor(@Inject('API_URL') public apiURL: string) {
+    
   }
 
   toggleHandler() : void {
