@@ -16,11 +16,9 @@ export class NameInputComponent {
     this.inputValue = (event.target as HTMLInputElement).value;
   }
 
-  btnClickHandler(value: KeyboardEvent, inputEl: HTMLInputElement) : void {
+  btnClickHandler(value: Event) : void {
     console.log('btn was clicked!', value);
     this.btnClick.emit({ value });
-
-    this.btnClick.emit({ inputEl })
   }
 
 
