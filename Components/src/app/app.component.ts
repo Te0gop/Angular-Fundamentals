@@ -1,5 +1,7 @@
 import { Component, Inject } from '@angular/core';
-import { API_URL_TOKEN } from './providers';
+import { IUser } from './interfaces/user';
+import { API_URL_TOKEN, MyService, MY_SERVICE } from './providers';
+import { UserService } from './user.service';
 
 const users = [
   {
@@ -25,20 +27,28 @@ const users = [
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+users: IUser[] | null = null;
+
   welcomeMessage = 'Hello!';
 
   isVisible = false;
 
   nameInput = 'Test test';
 
-  users = users;
-
   nameInputBtnHandler(data: {inputEl: HTMLInputElement}) : void {
     console.log(data.inputEl.value);
   }
 
-  constructor(@Inject(API_URL_TOKEN) public apiURL: string) {
-    
+  // constructor(@Inject(API_URL_TOKEN) public apiURL: string, @Inject(MY_SERVICE) MyService: MyService,
+  //  userService: UserService) {
+  //   console.log(MyService.value); 
+  //   console.log(userService); 
+
+  // }
+
+  constructor(userService: UserService) {
+    userService.loadUsers().subscribe(users => { this.users = users });
   }
 
   toggleHandler() : void {
