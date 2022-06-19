@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { API_URL_TOKEN } from './providers';
 
 const users = [
   {
@@ -36,7 +37,7 @@ export class AppComponent {
     console.log(data.inputEl.value);
   }
 
-  constructor(@Inject('API_URL') public apiURL: string) {
+  constructor(@Inject(API_URL_TOKEN) public apiURL: string) {
     
   }
 

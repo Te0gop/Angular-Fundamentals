@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NameInputComponent } from './name-input/name-input.component';
+import { apiURLprovider } from './providers';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,9 @@ import { NameInputComponent } from './name-input/name-input.component';
   imports: [
     BrowserModule
   ],
-  providers: [{
-    provide: 'API_URL',
-    useValue: 'http://localhost:4000/api/'
-  }],
+  providers: [
+    apiURLprovider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
