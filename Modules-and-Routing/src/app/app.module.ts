@@ -14,7 +14,7 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
