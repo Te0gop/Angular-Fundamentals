@@ -13,6 +13,7 @@ import { storageServiceProvider } from './storage.service';
 import { ThemeService } from './theme.service';
 import { PostService } from './post.service';
 import { PostListComponent } from './post-list/post-list.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PostListComponent } from './post-list/post-list.component';
     ThemeListComponent,
     AsideComponent,
     ThemeListItemComponent,
-    PostListComponent
+    PostListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
