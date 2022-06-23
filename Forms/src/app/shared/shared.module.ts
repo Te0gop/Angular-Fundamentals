@@ -10,6 +10,9 @@ import { HighlightDirective } from './highlight.directive';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    HighlightDirective
   ]
 })
 export class SharedModule { }

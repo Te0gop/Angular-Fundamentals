@@ -1,1 +1,9 @@
+{{isHighlighted}}
+
+<ng-template #elseTemplate>IS NOT HIGHLIGHTED</ng-template>
+<div *ngIf="isHighlighted; else elseTemplate;">IS HIGHLIGHTED</div>
+<div *ngFor="let user of users">{{user.name}}</div>
+
+<p [appHighlight]="isHighlighted" color="red">Some text</p>
+<button (click)="toggleHighlightHandler()">Toggle Highlight</button>
 <router-outlet></router-outlet>
