@@ -1,15 +1,19 @@
-import { Directive, ElementRef, HostListener, Input, OnChanges, Renderer2, SimpleChanges } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input, OnChanges, Renderer2, SimpleChanges } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
 })
 export class HighlightDirective implements OnChanges {
 
+  @HostBinding('class.is-highlighted') get isHighlighted() {
+    return this.appHighlight;
+  }
+
   @Input() color = 'green';
 
   @Input() appHighlight = false;
 
-  @HostListener('mouseenter') onMouseListener() {
+  @HostListener('mouseenter', ['$event']) onMouseListener(e: any) {
     if(this.appHighlight) { return; }
     this.appHighlight = !this.appHighlight; 
     this.highlight();
