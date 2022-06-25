@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
+import { LoginComponent } from './user/login/login.component';
 
 @NgModule({
   declarations: [
