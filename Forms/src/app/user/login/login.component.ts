@@ -26,5 +26,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  loginHandler(formData: any) {
+    console.log(formData)
+  }
 
 }
