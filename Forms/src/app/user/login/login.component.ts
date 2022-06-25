@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  isLoading = false;
+  errorMessage: string | undefined;
+
+  form = {
+    email: {
+      touched: false,
+      value: ''
+    },
+  
+    password: {
+      touched: false,
+      value: ''
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
