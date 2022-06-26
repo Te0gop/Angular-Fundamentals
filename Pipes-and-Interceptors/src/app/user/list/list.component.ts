@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.loadUsers().subscribe(userList => this.userList = userList);
+    this.userService.loadUsers().subscribe(userList => { this.userList = userList});
   }
 
 }
